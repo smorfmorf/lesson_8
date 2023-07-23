@@ -13,14 +13,18 @@ function generateRandomArray(count, n, m, option = "") {
             randomArray.push(randomNumber);
         } else if (option === "") {
             randomArray.push(randomNumber);
+        } else {
+            // Если опция задана некорректно, генерируем обычный массив
+            randomArray.push(randomNumber);
         }
     }
 
     return randomArray;
 }
-const arrayLength = 10; // Пример: генерировать массив из 10 элементов
+
+const arrayLength = 10; //  генерировать массив из 10 элементов
 const n = -50; // Нижняя граница диапазона
 const m = 50; // Верхняя граница диапазона
-const option = "even"; // 'even' для четных чисел, 'odd' для нечетных чисел
+const option = "odd"; // 'even' для четных чисел, 'odd' для нечетных чисел
 const randomArray = generateRandomArray(arrayLength, n, m, option);
 console.log(randomArray);
