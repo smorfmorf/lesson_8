@@ -3,22 +3,20 @@ function generateRandomArray(count, n, m, option = "") {
 
     const min = Math.min(n, m);
     const max = Math.max(n, m);
+    while (randomArray.length < count) {
+        for (let i = 0; i < count; i++) {
+            const randomNumber =
+                Math.floor(Math.random() * (max - min + 1)) + min;
 
-    for (let i = 0; i < count; i++) {
-        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
-        if (option === "even" && randomNumber % 2 === 0) {
-            randomArray.push(randomNumber);
-        } else if (option === "odd" && randomNumber % 2 !== 0) {
-            randomArray.push(randomNumber);
-        } else if (option === "") {
-            randomArray.push(randomNumber);
-        } else {
-            // Если опция задана некорректно, генерируем обычный массив
-            randomArray.push(randomNumber);
+            if (option === "even" && randomNumber % 2 === 0) {
+                randomArray.push(randomNumber);
+            } else if (option === "odd" && randomNumber % 2 !== 0) {
+                randomArray.push(randomNumber);
+            } else if (option === "") {
+                randomArray.push(randomNumber);
+            }
         }
     }
-
     return randomArray;
 }
 
